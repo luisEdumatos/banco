@@ -1,8 +1,6 @@
 package model;
 
-import Exceptions.SaqueException;
-
-import javax.security.sasl.SaslException;
+import exceptions.SaqueException;
 
 public class ContaCorrente extends Conta {
 
@@ -26,7 +24,7 @@ public class ContaCorrente extends Conta {
             super.saldo -= valor;
             System.out.println("Seu saque foi efetuado, porém agora você está utilizando o limite");
         } else {
-            super.saldo -= valor; 
+            super.saldo -= valor;
         }
     }
 }

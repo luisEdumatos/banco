@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.SaqueException;
+
 public class ContaPoupanca extends Conta{
 
     private double rendimento;
@@ -19,6 +21,10 @@ public class ContaPoupanca extends Conta{
 
     @Override
     public void saque(double valor) {
-        //Realiza saque com tratamento de exceção
+        if (valor > super.saldo) {
+            throw new SaqueException("O valor de saque supera o saldo");
+        } else {
+            super.saldo -= valor;
+        }
     }
 }
